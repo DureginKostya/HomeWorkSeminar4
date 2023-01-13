@@ -18,11 +18,10 @@ int getDegreeOfNumber(int variable, int index)
     return composition;
 }
 void showResult(string msg, int result)
-{
-    Console.Write(msg);
-    Console.WriteLine(result);
+{    
+    Console.WriteLine($"{msg} {result}");
 }
 int number = getUserNumber("Введите число: ");
 int degree = getUserNumber($"Введите степень, в которую нужно возвести число {number}: ");
 int degreeNumber = getDegreeOfNumber(number, degree);
-showResult($"Ответ: {number} ^ {degree} = ", degreeNumber);
+showResult($"Ответ: {number} ^ {degree} =", degreeNumber);
