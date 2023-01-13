@@ -14,14 +14,15 @@ int getDigitOfNumber(int reducedNumber)
     reducedNumber = reducedNumber % 10;
     return reducedNumber;
 }
-void getSumOfDigit(int variable, out int sumDigit)
+int getSumOfDigit(int variable)
 {  
-    sumDigit = 0;
+    int sumDigit = 0;
     while (variable > 0)
     {
         sumDigit = sumDigit + getDigitOfNumber(variable);
         variable = variable / 10;
     }
+    return sumDigit;
 }
 string getNumberInString(int userNumber)
 {
@@ -39,10 +40,9 @@ string getNumberInString(int userNumber)
 }
 void showResult(string msg, int result)
 {
-    Console.WriteLine($"{msg} = {result}");
+    Console.WriteLine($"{msg} {result}");
 }
 int number = getUserNumber("Введите число: ");
-int sum;
-getSumOfDigit(number, out sum);
+int sum = getSumOfDigit(number);
 string numberString = getNumberInString(number);
-showResult($"Ответ: {numberString}", sum);
+showResult($"Ответ: {numberString} =", sum);
