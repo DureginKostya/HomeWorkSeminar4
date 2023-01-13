@@ -36,7 +36,7 @@ string convertArrayToString(int[] userArray)
 }
 void showResult(string msg, string msg1)
 {
-    Console.WriteLine(msg + msg1);
+    Console.WriteLine($"{msg} {msg1}");
 }
 int dimensionArray = getUserData("Введите размерность массива: ");
 int downLimit = getUserData("Введите нижний предел для случайных чисел: ");
@@ -44,4 +44,4 @@ int upLimit = getUserData("Введите верхний предел для с�
 int[] array = new int[dimensionArray];
 array = createArray(dimensionArray, downLimit, upLimit);
 string arrayString = convertArrayToString(array);
-showResult($"Создан массив из {dimensionArray} случайных чисел: ", arrayString);
+showResult($"Создан массив из {dimensionArray} случайных чисел, в пределах от {downLimit} до {upLimit}:", arrayString);
